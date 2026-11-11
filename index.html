@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>S2ST Listening Test — 20 samples</title>
-  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=2">
   <script defer src="study_data.js?v=1"></script>
-  <script defer src="app.js?v=1"></script>
+  <script defer src="app.js?v=2"></script>
 </head>
 <body>
   <header class="page-header wrap">
@@ -16,6 +16,22 @@
     <p id="save-status" class="status" role="status">Enter your assigned rater ID to begin. Use the same ID and browser to resume.</p>
   </header>
   <main class="wrap">
+    <section class="guide panel" aria-labelledby="guide-title">
+      <h2 id="guide-title">How to use this page</h2>
+      <div class="id-reminder"><b>First, type your name or ID in the “Rater ID / name” box at the top left.</b> It is written into the exported file and is how your ratings are told apart from other raters'. A rater ID is required before rating or exporting.</div>
+      <ol>
+        <li><b>Rate every system in a sample,</b> then move on with <i>Next →</i> or the numbered buttons at the top.</li>
+        <li><b>The numbered buttons show your progress:</b>
+          <div class="progress-legend">
+            <div><span class="legend-number">12</span> grey — not started</div>
+            <div><span class="legend-number amber">12</span> amber — <b>started but incomplete</b>: some ratings are still missing</div>
+            <div><span class="legend-number green">12</span> green — complete <span class="legend-number blue-border">12</span> blue — the sample you are on now</div>
+          </div>
+        </li>
+        <li><b>Before exporting, check that no button is grey or amber.</b> The counter next to the export buttons also shows how many samples are fully rated; the page warns you if you export while something is missing.</li>
+        <li><div class="backup-reminder"><b>⚠ Export before you stop working or leave this computer — otherwise your ratings can be lost.</b><br>Your answers are kept only <i>inside this browser on this machine</i>; nothing is saved to the server or a shared drive. They come back if you reopen <strong>the same link, in the same browser, on the same machine</strong> with the same rater ID — but they are <strong>gone from this browser's session</strong> if you clear browsing data or use a private window, and are not available when you switch machine or browser or open the page at a different address or port.<br>So whenever you pause: click <strong>⬇ Export JSON</strong> at the bottom, even if you are only part-way through. You can carry on later and export again — each export contains everything rated so far, so keep the newest file.</div></li>
+      </ol>
+    </section>
     <section class="rubric panel" aria-labelledby="rubric-title">
       <h2 id="rubric-title">Rating dimensions (the scale for each is shown in italics)</h2>
       <div id="rubric-dimensions"></div>

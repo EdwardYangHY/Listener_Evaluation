@@ -2,7 +2,7 @@
 
 https://edwardyanghy.github.io/Listener_Evaluation/
 
-20 conversations (10 English → Chinese and 10 Chinese → English), source audio and four anonymous system outputs per conversation. The interface follows the supplied PDF: full rating rubric, one conversation at a time, System A–D cards, source/ASR transcripts, numbered navigation and a fixed export bar.
+20 conversations (10 English → Chinese and 10 Chinese → English), source audio and four anonymous system outputs per conversation. The interface follows the supplied v2 PDF: usage instructions and backup reminder, full rating rubric, one conversation at a time, System A–D cards, source/ASR transcripts, numbered navigation and a fixed export bar. Each system card repeats source audio and its transcript for convenient comparison. Numbered buttons indicate grey (not started), amber (partial), green (complete), and blue (current). Incomplete exports ask for confirmation and can still be downloaded as backups.
 
 Five independent 1–5 ratings (Speaker Similarity, Prosody Similarity, Conversational Naturalness, Translation Quality, Overall Quality) plus binary 0/1 Speaker Turn per output: 480 ratings total. Ratings start blank; zero is a completed binary rating. Output transcripts are ASR results for reference only, not ground truth.
 

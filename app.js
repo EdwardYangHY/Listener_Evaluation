@@ -216,7 +216,11 @@
       const name = `System ${String.fromCharCode(65 + position)}`;
       const card = el('section', 'system-card');
       card.dataset.outputId = id;
-      card.append(el('h3', '', name), audioPlayer(output.audio, `${name} translated audio`), transcript(output.transcript, `Transcription of this output (${sample.direction.split('-')[1].toUpperCase()}, automatic speech recognition)`));
+      const outputTranscript = transcript(output.transcript, `This output, transcribed (${sample.direction.split('-')[1].toUpperCase()}, automatic speech recognition)`);
+      outputTranscript.append(el('p', 'transcript-disclaimer', 'Automatic transcription, not ground truth — it can contain recognition errors. It is only a reading aid; rate what you hear in the audio.'));
+      const reference = el('section', 'source-reference');
+      reference.append(el('h4', 'media-label', 'SOURCE — REFERENCE, NOT RATED'), audioPlayer(sample.source.audio, `Source reference for ${name}`), transcript(sample.source.transcript, `Source transcript (${sample.direction.split('-')[0].toUpperCase()})`));
+      card.append(el('h3', '', name), el('h4', 'media-label', "THIS SYSTEM'S OUTPUT"), audioPlayer(output.audio, `${name} translated audio`), outputTranscript, reference);
       dimensions.forEach(d => card.append(ratingRow(output, d, name)));
       root.append(card);
     });
@@ -246,6 +250,11 @@
   }
   function exportFile(format) {
     if (!state || $('rater').value.trim() !== state.rater_id) return;
+    const count = study.samples.reduce((n, sample) => n + ratingCount(sample), 0);
+    if (count < total) {
+      const complete = study.samples.filter(sample => ratingCount(sample) === 24).length;
+      if (!confirm(`This study is incomplete: ${complete} / ${study.samples.length} samples fully rated, ${count} / ${total} ratings.\n\nExport a partial backup anyway? You can continue rating and export again later; keep the newest file.`)) return;
+    }
     persist();
     const result = rows();
     let body;
