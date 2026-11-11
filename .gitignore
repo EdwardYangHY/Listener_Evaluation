@@ -1,0 +1,4 @@
+.DS_Store
+private/
+annotations_*.csv
+__pycache__/
