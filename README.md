@@ -1,10 +1,9 @@
 # Listener Evaluation
 
-Independent speech-to-speech translation listening study. Interface and scoring protocol are being prepared.
+https://edwardyanghy.github.io/Listener_Evaluation/
 
-Planned GitHub Pages address: https://edwardyanghy.github.io/Listener_Evaluation/
+Current version reproduces the final public sample demonstration page from https://demopage-1.github.io/s2st-rebuttal-samples/ with its original layout, system labels, transcripts, and 100 MP3 files (20 conversations, source plus four systems).
 
-Final local source samples: `/Users/edwardyang/code/pseudo_gt_validation/datasets/listening_final_samples/`.
-20 conversations, each with source audio and four system outputs. Do not upload the original labeled demo, system mapping, or raw manifests as blind-study assets. Publish only the prepared study interface and anonymized audio.
+This is the sample demonstration; blind-study scoring, participant progress, and result export have not yet been implemented.
 
-Keep participant exports and private assignment maps out of this repository. The existing Subjective_Evaluation text study is a separate deployment and remains unchanged.
+GitHub Pages serves main at the repository root. Keep research mappings, raw manifests, and participant exports local. The existing Subjective_Evaluation text study is a separate deployment.
