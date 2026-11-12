@@ -219,7 +219,13 @@
       const outputTranscript = transcript(output.transcript, `This output, transcribed (${sample.direction.split('-')[1].toUpperCase()}, automatic speech recognition)`);
       outputTranscript.append(el('p', 'transcript-disclaimer', 'Automatic transcription, not ground truth — it can contain recognition errors. It is only a reading aid; rate what you hear in the audio.'));
       const reference = el('section', 'source-reference');
-      reference.append(el('h4', 'media-label', 'SOURCE — REFERENCE, NOT RATED'), audioPlayer(sample.source.audio, `Source reference for ${name}`), transcript(sample.source.transcript, `Source transcript (${sample.direction.split('-')[0].toUpperCase()})`));
+      const referenceNote = el('div', 'source-reference-note');
+      const noteZh = el('p', '', '此处重复提供本组顶部的同一段源音频，仅为方便就近对比，无需评分。');
+      noteZh.lang = 'zh-CN';
+      const noteEn = el('p', '', 'This is the same source audio provided at the top of this sample, repeated here for convenient comparison. Do not rate it.');
+      noteEn.lang = 'en';
+      referenceNote.append(noteZh, noteEn);
+      reference.append(el('h4', 'media-label', '重听源音频（与顶部相同） / Replay source (same as above)'), referenceNote, audioPlayer(sample.source.audio, `Replay the same source audio for ${name}; reference only, not rated`), transcript(sample.source.transcript, `Source transcript (${sample.direction.split('-')[0].toUpperCase()})`));
       card.append(el('h3', '', name), el('h4', 'media-label', "THIS SYSTEM'S OUTPUT"), audioPlayer(output.audio, `${name} translated audio`), outputTranscript, reference);
       dimensions.forEach(d => card.append(ratingRow(output, d, name)));
       root.append(card);
