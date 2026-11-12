@@ -12,6 +12,12 @@ input[type=text], #rater { border:1px solid var(--border); border-radius:6px; pa
 .status.error { color:#ad241d; font-weight:700; }
 main { padding-top:16px; padding-bottom:130px; }
 .panel { border:1px solid var(--border); border-radius:10px; }
+.task-introduction { padding:12px 16px 16px; margin-bottom:14px; }
+.task-introduction h2 { color:var(--blue); font-size:16px; margin:0 0 12px; }
+.task-paragraph + .task-paragraph { border-top:1px solid var(--line); padding-top:12px; margin-top:12px; }
+.task-paragraph p { margin:0; }
+.task-paragraph p[lang="zh-CN"] { line-height:1.8; }
+.task-paragraph p[lang="en"] { margin-top:6px; color:var(--muted); }
 .guide { padding:12px 16px 16px; margin-bottom:14px; }
 .guide h2 { color:var(--blue); font-size:16px; margin:0 0 12px; }
 .id-reminder { border:1px solid #b2d0fb; border-left:4px solid var(--blue); border-radius:7px; padding:8px 10px; }
