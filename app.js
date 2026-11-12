@@ -7,7 +7,7 @@
     { id:'conversational_naturalness', title:'Conversational Naturalness', description:'Does the exchange flow like a real conversation? Judge the transitions between speakers (pacing, pauses, no abrupt cuts), not just how natural one speaker sounds alone.', low:'1 = Disjointed, abrupt hand-offs', high:'5 = Flows like a real conversation' },
     { id:'speaker_turn', title:'Speaker Turn', description:'Is the multi-speaker turn-taking structure preserved (who speaks when, no merged/dropped turns)? A binary judgement, not a matter of degree.', low:'0 = Turns are messed up', high:'1 = Turns are preserved', binary:true },
     { id:'translation_quality', title:'Translation Quality', description:'How accurately does the translation convey the meaning of the source? Judge against the source transcript and audio as you perceive it.', low:'1 = Meaning lost / wrong', high:'5 = Meaning fully conveyed' },
-    { id:'overall_quality', title:'Overall Quality', description:'Your overall impression of this translation as a whole.', low:'1 = Poor', high:'5 = Excellent' }
+    { id:'overall_quality', title:'Overall Quality', description:'Your overall impression of this translation as a whole. Consider all aspects of the translated speech, including whether the wording sounds natural and appropriate for an everyday conversation in the target language.', low:'1 = Poor', high:'5 = Excellent' }
   ];
   const $ = id => document.getElementById(id);
   const prefix = `s2st-listening:v1:${study.fingerprint}:`;
